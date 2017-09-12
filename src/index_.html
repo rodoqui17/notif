@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Helios by HTML5 UP</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css">
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script src="angular.min.js"></script>
+<script src="jquery-2.1.4.min.js"></script>
+ <!-- Firebase -->
+        <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+        <!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+<script src="datos.js"></script>
+	</head>
+	<body class="homepage" ng-app="ngDllsController" ng-controller="DllsController">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1><a href="index.html" id="logo">Bolichero</a></h1>
+								<hr>
+								<p>Un lugar, para tu mejor momento </p>
+							</header>
+							<footer>
+								<a href="#banner" class="button circled scrolly">Buscar</a>
+							</footer>
+						</div>
+	</div>
+					<!-- Nav -->
+						<!-- <nav id="nav"> -->
+							<!-- <ul> -->
+								<!-- <li><a href="#banner">Inicio</a></li> -->
+							<!-- 	<li>
+									<a href="#">Dropdown</a>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li><a href="#">Etiam dolore nisl</a></li>
+										<li>
+											<a href="#">And a submenu &hellip;</a>
+											<ul>
+												<li><a href="#">Lorem ipsum dolor</a></li>
+												<li><a href="#">Phasellus consequat</a></li>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam dolore nisl</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Veroeros feugiat</a></li>
+									</ul>
+								</li> -->
+								<!-- <li><a href="#">Registro Usuario</a></li>
+								<li><a href="#">Registro Empresa</a></li>
+								<li><a href="#">Salir</a></li> -->
+							<!-- </ul> -->
+						<!-- </nav> -->
+
+			
+
+			<!-- Banner -->
+	<!-- 		 <tbody>
+    <tr ng-repeat="product in products">
+      <td>{{product.sku}}</td>
+      <td>{{product.description}}</td>
+      <td>{{product.price | currency}}</td>
+	  <td><a href="#/edit/{{product.$id}}" class="btn btn-small btn-primary">Edit</a> <a class="btn btn-small btn-danger" ng-click="removeProduct(product.$id)">Delete</a></td>
+	  
+    </tr>
+  </tbody> -->
+				<section id="banner">
+					<header>
+						<h2><strong>DISCOTECAS.</strong></h2>
+						<p class="fondo">
+							Existen <strong class="fondo">{{products.length}}</strong> discotecas cerca de tu ubicaci&#xF3;n:
+						</p>
+					</header>
+				</section>
+
+			<!-- Discotecas -->
+				<section class="carousel">
+					<div class="reel">
+
+						<article ng-repeat="item in products">
+							<a href="#" class="img_carr"><img src="{{item.img}}" alt=""></a>
+
+					
+								<h3><a href="#">{{item.sku}} </a></h3> 
+								<h6><small class="{{item.estado}}">{{item.estado}}</small></h6>
+							Hoy se presenta el grupo: 
+							<h3>{{item.grupo}}</h3><strong> a horas: {{item.hora}} </strong>
+						
+							
+							<br>	<strong>Espacio:</strong> <small class="{{item.espacio}}">{{item.espacio}}</small>
+								
+								<br><strong>Precio:</strong> {{item.price}} Bs.
+							    <!-- <hr><strong>Bebidas:</strong>{{item.bebidas}} -->
+							    <br><strong>Tipo de Musica:</strong> {{item.tipo}}
+												<br>
+								<ul class="icons">
+											<li><a href="#" class="icon fa-comments"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon fa-video-camera"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon fa-info-circle"><span class="label">Facebook</span></a></li>
+										</ul>
+										
+						</article>
+
+						
+
+					</div>
+				</section>
+<!-- Karaokes -->
+<!-- Banner -->
+				<section id="banner">
+					<header>
+						<h2><strong>KARAOKES</strong>.</h2>
+						<p>
+							Hoy <strong>Martes 13</strong> disfruta de los mejores KARAOKES en los siguientes lugares:
+
+
+						</p>
+					</header>
+				</section>
+
+				<section class="carousel">
+					<div class="reel">
+
+						<article ng-repeat="item in b" disable="true">
+							<a href="#" class="img_carr"><img src="images/{{item.imag}}" alt=""></a>
+
+							
+								<h3><a href="#">{{item.nombre}} </a></h3> 
+								<h6><small class="{{item.espacio}}">abierto</small></h6>
+							    <br><strong>Espacio:</strong> <small class="{{item.espacio}}">{{item.espacio}}</small>
+								<br><strong>Precio:</strong> {{item.precio}} Bs.
+							    <!-- <hr><strong>Bebidas:</strong>{{item.bebidas}} -->
+							    <br><strong>Tipo de Musica:</strong> {{item.musica}}
+							
+							<p></p>
+
+						</article>
+				
+					</div>
+				</section>
+
+				<!-- Promociones -->
+			<!-- Banner -->	
+				<section id="banner">
+					<header>
+						<h2><strong>Promociones</strong>.</h2>
+						<p>
+							Hoy <strong>Martes 13</strong> disfruta de las mejores Promociones en los siguientes lugares:
+
+
+						</p>
+					</header>
+				</section>
+
+				<section class="carousel">
+					<div class="reel">
+
+						<article ng-repeat="item in b" disable="true">
+							<a href="#" class="img_carr"><img src="images/{{item.imag}}" alt=""></a>
+
+							<header>
+								<h3><a href="#">{{item.nombre}} </a></h3> 
+								<h6><small class="{{item.espacio}}">abierto</small></h6>
+							</header>
+							<br><strong>Tipo de Promocion:</strong> <small class="{{item.
+							espacio}}">Sorteo</small>
+							<br>
+							<strong>Detalle:</strong> <small>Hoy entre todas las personas que se registren por este medio se sorteara a las 12:00 una botella de Ron Flor de Ca&#xF1;a </small>
+							
+							<p></p>
+							<hr>
+							<h6>Participa registrandote en Facebook</h6>
+							<br>
+							<a href="/registro" class="icon fa-facebook circled"> Participar</a>
+
+							
+							
+
+						</article>
+
+						
+
+					</div>
+				</section>
+	<!-- After-Party -->
+			<!-- Banner -->	
+
+			
+			<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						<div class="row">
+
+							<!-- Tweets -->
+								<section class="4u 12u(mobile)">
+									<header>
+										<h2 class="icon fa-twitter circled"><span class="label">Tweets</span></h2>
+									</header>
+									<ul class="divided">
+										<li>
+											<article class="tweet">
+												Amet nullam fringilla nibh nulla convallis tique ante sociis accumsan.
+												<span class="timestamp">5 minutes ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Hendrerit rutrum quisque.
+												<span class="timestamp">30 minutes ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Curabitur donec nulla massa laoreet nibh. Lorem praesent montes.
+												<span class="timestamp">3 hours ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Lacus natoque cras rhoncus curae dignissim ultricies. Convallis orci aliquet.
+												<span class="timestamp">5 hours ago</span>
+											</article>
+										</li>
+									</ul>
+								</section>
+
+							<!-- Posts -->
+								<section class="4u 12u(mobile)">
+									<header>
+										<h2 class="icon fa-file circled"><span class="label">Posts</span></h2>
+									</header>
+									<ul class="divided">
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Nisl fermentum integer</a></h3>
+												</header>
+												<span class="timestamp">3 hours ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Phasellus portitor lorem</a></h3>
+												</header>
+												<span class="timestamp">6 hours ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Magna tempus consequat</a></h3>
+												</header>
+												<span class="timestamp">Yesterday</span>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Feugiat lorem ipsum</a></h3>
+												</header>
+												<span class="timestamp">2 days ago</span>
+											</article>
+										</li>
+									</ul>
+								</section>
+
+							<!-- Photos -->
+								<section class="4u 12u(mobile)">
+									<header>
+										<h2 class="icon fa-camera circled"><span class="label">Photos</span></h2>
+									</header>
+									<div class="row 25%">
+										<div class="6u">
+											<a href="#" class="image fit"><img src="images/pic10.jpg" alt=""></a>
+										</div>
+										<div class="6u$">
+											<a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a>
+										</div>
+										<div class="6u">
+											<a href="#" class="image fit"><img src="images/pic12.jpg" alt=""></a>
+										</div>
+										<div class="6u$">
+											<a href="#" class="image fit"><img src="images/pic13.jpg" alt=""></a>
+										</div>
+										<div class="6u">
+											<a href="#" class="image fit"><img src="images/pic14.jpg" alt=""></a>
+										</div>
+										<div class="6u$">
+											<a href="#" class="image fit"><img src="images/pic15.jpg" alt=""></a>
+										</div>
+									</div>
+								</section>
+
+						</div>
+						<hr>
+						<div class="row">
+							<div class="12u">
+
+								<!-- Contact -->
+									<section class="contact">
+										<header>
+											<h3>Nisl turpis nascetur interdum?</h3>
+										</header>
+										<p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
+										<ul class="icons">
+											<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+											<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+											<li><a href="#" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
+										</ul>
+									</section>
+
+								<!-- Copyright -->
+									<div class="copyright">
+										<ul class="menu">
+											<li>&#xA9; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										</ul>
+									</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.onvisible.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

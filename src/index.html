@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bolichero</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css">
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script src="angular.min.js"></script>
+<script src="jquery-2.1.4.min.js"></script>
+ <!-- Firebase -->
+        <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+        <!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+<script src="datos.js"></script>
+	</head>
+	<body class="homepage" ng-app="ngDllsController" ng-controller="DllsController">
+		<div id="page-wrapper">
+
+
+			<!-- Header -->
+				<div id="header">
+<br>
+					<!-- Inner -->
+						<div class="inner">
+					<!-- 		<footer><a href="#banner" class="icon fa-music"> Discotecas</a>  |  <a href="#karaoke" class="icon fa-microphone"> Karaokes</a> |  <a href="#" class="icon fa-moon-o ">  Nigth Clubs</a></footer> -->
+							 
+							<hr>
+							<header>
+								<h1><a href="#" class="icon fa-hand-peace-o"></a><br>BOLICHERO</h1>
+								
+								<hr>
+								<br>
+										<p>
+							<!-- tu ubicaci&#xF3;n actual es:<br> </p><h1> <a href="#banner" class="icon fa-map-marker"> {{nombre}}</a></h1>
+							
+						<p> --></p>						
+							</header>
+							
+						</div>
+	</div>
+					
+
+			
+
+	
+				<section id="banner">
+
+					<header>
+						<h2><strong> <a href="#" class="icon fa-music"></a> DISCOTECAS</strong></h2>
+					<!-- 	 <a href="#banner" class="icon fa-map-marker"> {{nombre}}</a> 
+						|
+						 <a href="#banner" class="icon fa-map-o"> Mapa</a>  -->
+						
+					
+						
+												</header>
+				</section>
+
+			<!-- Discotecas -->
+				<section class="carousel">
+					<div class="reel">
+
+						<article ng-repeat="item in a">
+							<a href="#" class="img_carr"><img src="images/{{item.img}}" alt=""></a>
+
+					
+								<h3>{{item.nombre}} </h3> 
+								<h6><small class="{{item.estado}}">{{item.estado}}</small></h6>
+							Hoy se presenta: 
+							<h3>{{item.grupo}}  </h3><strong> a horas: {{item.hora}} </strong>
+<br>
+							en vivo <a href="#" class="icon fa-play-circle-o"></a>
+											
+						
+							
+							<br>	<strong>Espacio:</strong> <small class="{{item.espacio}}">{{item.espacio}}</small>
+								
+								<br><strong>Precio:</strong> {{item.precio}} Bs.
+							    <!-- <hr><strong>Bebidas:</strong>{{item.bebidas}} -->
+							    <br><strong>Musica:</strong> {{item.musica}}
+												<br>
+								<small><ul class="icons">
+											<li><a href="#" class="icon fa-comments"></a>{{item.comentarios}}</li>
+											<li><a href="#" class="icon fa-share-alt"></a>{{item.visto}}</li>
+											<li><a href="#" class="icon fa-heartbeat"></a>{{item.gusta}}</li>
+
+											<li><a href="#" class="icon fa-list-ul"></a></li>
+
+											
+										</ul>
+								</small>		
+						</article>
+
+						
+
+					</div>
+				</section>
+<!-- Karaokes -->
+<!-- Banner -->
+				<!-- <section id="banner">
+					<header>
+						<h2><strong> <a href="#" class="icon fa-microphone"><span class="label">inicio</span></a> KARAOKES</strong></h2>		
+					</header>
+					 <a href="#banner" class="icon fa-map-marker"> {{nombre}}</a> 
+						|
+						 <a href="#banner" class="icon fa-map-o"> Mapa</a>
+				</section>
+
+				<section class="carousel">
+					<div class="reel">
+
+						<article ng-repeat="item in b" disable="true">
+							<a href="#" class="img_carr"><img src="images/{{item.imag}}" alt=""></a>
+
+							
+								<h3><a href="#">{{item.nombre}} </a></h3> 
+								<h6><small class="{{item.estado}}">{{item.estado}}</small></h6>
+							    <br><strong>Espacio:</strong> <small class="{{item.espacio}}">{{item.espacio}}</small>
+								<br><strong>Precio:</strong> {{item.precio}} Bs.
+				 -->			    <!-- <hr><strong>Bebidas:</strong>{{item.bebidas}} -->
+				<!-- 			    <br><strong>Horario:</strong> {{item.hora}}
+								<br>
+								<small><ul class="icons">
+											<li><a href="#" class="icon fa-comments"></a>{{item.comentarios}}</li>
+											<li><a href="#" class="icon fa-share-alt"></a>{{item.visto}}</li>
+											<li><a href="#" class="icon fa-heartbeat"></a>{{item.gusta}}</li>
+											<li><a href="#" class="icon fa-list-ul"></a></li>
+										</ul>
+								</small>
+
+						</article>
+				
+					</div>
+				</section>
+ -->
+				<!-- Promociones -->
+			<!-- Banner -->	
+<!-- 				<section id="banner">
+					<header>
+						<h2><strong> <a href="#" class="icon fa-moon-o"><span class="label">inicio</span></a> NIGTH CLUBs</strong></h2>
+						 <a href="#banner" class="icon fa-map-marker"> {{nombre}}</a> 
+						|
+						 <a href="#banner" class="icon fa-map-o"> Ver Mapa</a>
+				
+					</header>
+				</section>
+
+				<section class="carousel">
+					<div class="reel">
+
+						<article ng-repeat="item in b" disable="true">
+							<a href="#" class="img_carr"><img src="images/{{item.imag}}" alt=""></a>
+
+							<header>
+								<h3><a href="#">{{item.nombre}} </a></h3> 
+								<h6><small class="{{item.espacio}}">abierto</small></h6>
+							</header>
+							<br><strong>Promocion:</strong> <small class="{{item.
+							espacio}}">Sorteo</small>
+							<br>
+							<strong>Detalle:</strong> <small>Hoy entre todas las personas que se registren por este medio se sorteara a las 12:00 una botella de Ron Flor de Ca&#xF1;a </small>
+							
+							<p></p>
+							<hr>
+							<h6>Participa registrandote en Facebook</h6>
+							<br>
+							<a href="/registro" class="icon fa-facebook circled"> Participar</a>
+						
+							
+
+						</article>
+
+						
+
+					</div>
+				</section>
+ -->	<!-- After-Party -->
+			<!-- Banner -->	
+
+			
+			<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						<div class="row">
+
+						</div>
+					
+						<div class="row">
+							<div class="12u">
+
+								<!-- Contact -->
+									<section class="contact">
+										 <h3><a href="#index.html" class="icon fa-hand-o-right"><br> Invitar a un amigo</a>
+										 	</h3>
+										 	<br>
+										<header>
+											<h3> 
+												<a href="#index.html" class="icon fa-tasks"><br> Registro para negocios</a>
+												</h3>
+										</header>
+										<p>Bolichero es una aplicaci&#xF3;n gratuita que conecta a las personas con lugares cercanos a su ubicaci&#xF3;n, ya sean Discotecas, Karaokes &#xF3; Nigth Clubs, si deseas registrar tu negocio, sigue cualquiera de los links que se muestran debajo, y consulta por los servicios</p>
+										<ul class="icons">
+											<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+											
+										</ul>
+									</section>
+
+								<!-- Copyright -->
+									<!-- <div class="copyright">
+										<ul class="menu">
+											<li>&#xA9; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										</ul>
+									</div> -->
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.onvisible.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
